@@ -28,8 +28,22 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
-	
+	// Branch Management Section //
+	Route::get('/setting/branches', 'BranchManagementController@index')->name('branches.index');
+	Route::get('/setting/branches/create', 'BranchManagementController@create')->name('branches.create');
+	Route::post('/setting/branches/store', 'BranchManagementController@store')->name('branches.store');
+	Route::get('/setting/branches/edit/{id}', 'BranchManagementController@edit')->name('branches.edit');
+	Route::post('/setting/branches/update/{id}', 'BranchManagementController@update')->name('branches.update');
+	Route::post('/setting/branches/destroy/{id}', 'BranchManagementController@destroy')->name('branches.destroy');	
 
+	// Bank Listing Section //
+	Route::get('/setting/bank_lists', 'BankManagementController@index')->name('banks.index');
+	Route::get('/setting/bank_lists/create', 'BankManagementController@create')->name('banks.create');
+	Route::post('/setting/bank_lists/store', 'BankManagementController@store')->name('banks.store');
+	Route::get('/setting/bank_lists/edit/{id}', 'BankManagementController@edit')->name('banks.edit');
+	Route::post('/setting/bank_lists/update/{id}', 'BankManagementController@update')->name('banks.update');
+	Route::post('/setting/bank_lists/destroy/{id}', 'BankManagementController@destroy')->name('banks.destroy');	
+	
 	// Leave Category Section //
 	Route::get('/setting/leave_categories', 'LeaveCatController@index');
 	Route::get('/setting/leave_categories/create', 'LeaveCatController@create');
