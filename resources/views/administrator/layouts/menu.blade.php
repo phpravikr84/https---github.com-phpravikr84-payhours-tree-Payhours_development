@@ -12,7 +12,7 @@
             </a>
             <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Company Information') }}</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Branches') }}</a></li>
+                <li><a href="{{ url('/setting/branches') }}"><i class="fa fa-circle-o"></i>{{ __('Branches') }}</a></li>
                 <li><a href="{{ url('/setting/departments') }}"><i class="fa fa-circle-o"></i>{{ __('Department') }}</a></li>
             </ul>
         </li>
