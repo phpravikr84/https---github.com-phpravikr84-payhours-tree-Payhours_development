@@ -35,8 +35,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('System Control File'); ?></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Bank Listing'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/departments'); ?>"><i class="fa fa-circle-o"></i><?php echo __('System Control File'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/bank_lists'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Bank Listing'); ?></a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('GL Interface Control File'); ?></a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('BSP Bank Transfer Setup'); ?></a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('ANZ Bank Transfer Setup'); ?></a></li>
@@ -55,13 +55,13 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="<?php echo url('/setting/leave_categories'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Manage Leave'); ?></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Pay Batch Number'); ?></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Pay Location'); ?></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('GL Codes'); ?></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Pay Accumulators'); ?></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Superannuation'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/pay_batch_numbers'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Pay Batch Number'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/pay_locations'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Pay Location'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/gl_codes'); ?>"><i class="fa fa-circle-o"></i><?php echo __('GL Codes'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/pay_accumulators'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Pay Accumulators'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/superannuations'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Superannuation'); ?></a></li>
                         <li><a href="<?php echo route('setting.bank_details.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Bank Details'); ?></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Period Definition'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/departments'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Period Definition'); ?></a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Pay Items'); ?></a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Currency'); ?></a></li>
                     </ul>

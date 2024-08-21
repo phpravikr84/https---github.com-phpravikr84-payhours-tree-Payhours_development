@@ -44,6 +44,50 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/setting/bank_lists/update/{id}', 'BankManagementController@update')->name('banks.update');
 	Route::post('/setting/bank_lists/destroy/{id}', 'BankManagementController@destroy')->name('banks.destroy');	
 	
+	// Pay Batch Number Section //
+	Route::get('/setting/pay_batch_numbers', 'PayBatchNumberController@index')->name('pay_batch_numbers.index');
+	Route::get('/setting/pay_batch_numbers/create', 'PayBatchNumberController@create')->name('pay_batch_numbers.create');
+	Route::post('/setting/pay_batch_numbers/store', 'PayBatchNumberController@store')->name('pay_batch_numbers.store');
+	Route::get('/setting/pay_batch_numbers/edit/{id}', 'PayBatchNumberController@edit')->name('pay_batch_numbers.edit');
+	Route::post('/setting/pay_batch_numbers/update/{id}', 'PayBatchNumberController@update')->name('pay_batch_numbers.update');
+	Route::post('/setting/pay_batch_numbers/destroy/{id}', 'PayBatchNumberController@destroy')->name('pay_batch_numbers.destroy');	
+	
+	// Pay Location Section //
+	Route::get('/setting/pay_locations', 'PayLocationController@index')->name('pay_locations.index');
+	Route::get('/setting/pay_locations/create', 'PayLocationController@create')->name('pay_locations.create');
+	Route::post('/setting/pay_locations/store', 'PayLocationController@store')->name('pay_locations.store');
+	Route::get('/setting/pay_locations/edit/{id}', 'PayLocationController@edit')->name('pay_locations.edit');
+	Route::post('/setting/pay_locations/update/{id}', 'PayLocationController@update')->name('pay_locations.update');
+	Route::post('/setting/pay_locations/destroy/{id}', 'PayLocationController@destroy')->name('pay_locations.destroy');	
+
+	// GL Code Section //
+	Route::get('/setting/gl_codes', 'GLCodeController@index')->name('gl_codes.index');
+	Route::get('/setting/gl_codes/create', 'GLCodeController@create')->name('gl_codes.create');
+	Route::post('/setting/gl_codes/store', 'GLCodeController@store')->name('gl_codes.store');
+	Route::get('/setting/gl_codes/edit/{id}', 'GLCodeController@edit')->name('gl_codes.edit');
+	Route::post('/setting/gl_codes/update/{id}', 'GLCodeController@update')->name('gl_codes.update');
+	Route::post('/setting/gl_codes/destroy/{id}', 'GLCodeController@destroy')->name('gl_codes.destroy');	
+	
+
+	//Pay Accumulutaors
+	Route::get('/setting/pay_accumulators', 'PayAccumulatorController@index')->name('pay_accumulators.index');
+	Route::get('/setting/pay_accumulators/create', 'PayAccumulatorController@create')->name('pay_accumulators.create');
+	Route::post('/setting/pay_accumulators/store', 'PayAccumulatorController@store')->name('pay_accumulators.store');
+	Route::get('/setting/pay_accumulators/edit/{id}', 'PayAccumulatorController@edit')->name('pay_accumulators.edit');
+	Route::post('/setting/pay_accumulators/update/{id}', 'PayAccumulatorController@update')->name('pay_accumulators.update');
+	Route::post('/setting/pay_accumulators/destroy/{id}', 'PayAccumulatorController@destroy')->name('pay_accumulators.destroy');	
+	
+	//Superannuation
+	Route::get('/setting/superannuations', 'SuperannuationController@index')->name('superannuations.index');
+	Route::get('/setting/superannuations/create', 'SuperannuationController@create')->name('superannuations.create');
+	Route::post('/setting/superannuations/store', 'SuperannuationController@store')->name('superannuations.store');
+	Route::get('/setting/superannuations/edit/{id}', 'SuperannuationController@edit')->name('superannuations.edit');
+	Route::post('/setting/superannuations/update/{id}', 'SuperannuationController@update')->name('superannuations.update');
+	Route::post('/setting/superannuations/destroy/{id}', 'SuperannuationController@destroy')->name('superannuations.destroy');	
+	
+
+	//Currency
+
 	// Leave Category Section //
 	Route::get('/setting/leave_categories', 'LeaveCatController@index');
 	Route::get('/setting/leave_categories/create', 'LeaveCatController@create');
