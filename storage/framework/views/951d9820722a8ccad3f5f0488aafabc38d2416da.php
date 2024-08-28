@@ -1,22 +1,22 @@
-<?php $__env->startSection('title', __('Pay Batch Number List')); ?>
+<?php $__env->startSection('title', __('GL Interface Control Files')); ?>
 
 <?php $__env->startSection('main_content'); ?>
 <div class="content-wrapper">
     <section class="content-header">
-        <h1><?php echo __('Pay Batch Number List'); ?></h1>
+        <h1><?php echo __('GL Interface Control Files'); ?></h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo url('/dashboard'); ?>"><i class="fa fa-dashboard"></i> <?php echo __('Dashboard'); ?></a></li>
-            <li><a><?php echo __('Pay Batch Management'); ?></a></li>
-            <li class="active"><?php echo __('Pay Batch Number List'); ?></li>
+            <li><a><?php echo __('GL Interface Management'); ?></a></li>
+            <li class="active"><?php echo __('Control Files List'); ?></li>
         </ol>
     </section>
 
     <section class="content">
         <div class="box box-default">
             <div class="box-header with-border">
-                <h3 class="box-title"><?php echo __('Pay Batch Number List'); ?></h3>
+                <h3 class="box-title"><?php echo __('Control Files List'); ?></h3>
                 <div class="box-tools pull-right">
-                    <a href="<?php echo route('pay_batch_numbers.create'); ?>" class="btn btn-primary"><?php echo __('Add Pay Batch Number'); ?></a>
+                    <a href="<?php echo route('gl_interface_control_files.create'); ?>" class="btn btn-primary"><?php echo __('Add Control File'); ?></a>
                 </div>
             </div>
             <div class="box-body">
@@ -26,21 +26,19 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th><?php echo __('Batch Number Code'); ?></th>
-                            <th><?php echo __('Batch Number Name'); ?></th>
-                            <th><?php echo __('Publication Status'); ?></th>
+                            <th><?php echo __('Control Setup Name'); ?></th>
+                            <th><?php echo __('GL Code Account Name'); ?></th>
                             <th><?php echo __('Action'); ?></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $__currentLoopData = $payBatchNumbers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $payBatchNumber): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = $controlFiles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $controlFile): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
-                                <td><?php echo $payBatchNumber->pay_batch_number_code; ?></td>
-                                <td><?php echo $payBatchNumber->pay_batch_number_name; ?></td>
-                                <td><?php echo $payBatchNumber->status == 1 ? __('Published') : __('Unpublished'); ?></td>
+                                <td><?php echo $controlFile->control_setup_name; ?></td>
+                                <td><?php echo $controlFile->gl_code_account_name; ?></td>
                                 <td>
-                                    <a href="<?php echo route('pay_batch_numbers.edit', $payBatchNumber->id); ?>" class="btn btn-sm btn-info"><?php echo __('Edit'); ?></a>
-                                    <form action="<?php echo route('pay_batch_numbers.destroy', $payBatchNumber->id); ?>" method="POST" style="display:inline;">
+                                    <a href="<?php echo route('gl_interface_control_files.edit', $controlFile->id); ?>" class="btn btn-sm btn-info"><?php echo __('Edit'); ?></a>
+                                    <form action="<?php echo route('gl_interface_control_files.destroy', $controlFile->id); ?>" method="POST" style="display:inline;">
                                         <?php echo csrf_field(); ?>
 
                                         <?php echo method_field('DELETE'); ?>

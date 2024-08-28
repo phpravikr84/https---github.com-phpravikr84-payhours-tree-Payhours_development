@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\BankDetail;
+use App\Bank;
 
 class BankDetailController extends Controller
 {
@@ -15,7 +16,8 @@ class BankDetailController extends Controller
 
     public function create()
     {
-        return view('administrator.setting.bank_details.create');
+        $banks = Bank::all();
+        return view('administrator.setting.bank_details.create', compact('banks'));
     }
 
     public function store(Request $request)
@@ -40,7 +42,8 @@ class BankDetailController extends Controller
     public function edit($id)
     {
         $bank_details = BankDetail::find($id);
-        return view('administrator.setting.bank_details.edit', compact('bank_details'));
+        $banks = Bank::all();
+        return view('administrator.setting.bank_details.edit', compact('bank_details', 'banks'));
     }
 
     public function update(Request $request, $id)

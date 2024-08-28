@@ -39,7 +39,10 @@
                     </div>
                     <div class="form-group">
                         <label for="tax_method_for_employee_contribution">{{ __('Tax Method for Employee Contribution') }}</label>
-                        <input type="text" name="tax_method_for_employee_contribution" class="form-control" value="{{ $superannuation->tax_method_for_employee_contribution }}">
+                        <select name="tax_method_for_employee_contribution" class="form-control">
+                            <option value="after_tax" {{ $superannuation->tax_method_for_employee_contribution=='after_tax' ? 'selected' : '' }}>{{ __('After Tax') }}</option>
+                            <option value="before_tax" {{ $superannuation->tax_method_for_employee_contribution=='before_tax' ? 'selected' : '' }}>{{ __('Before Tax') }}</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="included_bank_transfer">{{ __('Included in Bank Transfer') }}</label>
@@ -58,7 +61,14 @@
                     </div>
                     <div class="form-group">
                         <label for="bank_name">{{ __('Bank Name') }}</label>
-                        <input type="text" name="bank_name" class="form-control" value="{{ $superannuation->bank_name }}">
+                        <select name="bank_name" id="bank_name" class="form-control">
+                            <option value="" selected disabled>{{ __('Select one') }}</option>
+                            @if($banks)
+                                @foreach($banks as $bank)
+                                    <option value="{{ $bank->id }}" {{ $superannuation->bank_name==$bank->id ? 'selected' : '' }}>{{ $bank->id.'-'.$bank->bank_name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="employer_name">{{ __('Employer Name') }}</label>

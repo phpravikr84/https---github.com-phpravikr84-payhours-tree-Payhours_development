@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Superannuation;
+use App\Bank;
 use Illuminate\Http\Request;
 
 class SuperannuationController extends Controller
@@ -15,7 +16,8 @@ class SuperannuationController extends Controller
 
     public function create()
     {
-        return view('administrator.setting.superannuations.create');
+        $banks = Bank::all();
+        return view('administrator.setting.superannuations.create', compact('banks'));
     }
 
     public function store(Request $request)
@@ -44,7 +46,8 @@ class SuperannuationController extends Controller
     public function edit($id)
     {
         $superannuation = Superannuation::findOrFail($id);
-        return view('administrator.setting.superannuations.edit', compact('superannuation'));
+        $banks = Bank::all();
+        return view('administrator.setting.superannuations.edit', compact('superannuation', 'banks'));
     }
 
     public function update(Request $request, $id)

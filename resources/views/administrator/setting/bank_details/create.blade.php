@@ -82,7 +82,14 @@
                             </div>
                             <label for="bank_type">{{ __('Bank Type') }} <span class="text-danger">*</span></label>
                             <div class="form-group{{ $errors->has('bank_type') ? ' has-error' : '' }} has-feedback">
-                                <input type="text" name="bank_type" id="bank_type" class="form-control" value="{{ old('bank_type') }}" placeholder="{{ __('Enter bank type..') }}">
+                                <select name="bank_type" id="bank_type" class="form-control">
+                                    <option value="" selected disabled>{{ __('Select one') }}</option>
+                                    @if($banks)
+                                        @foreach($banks as $bank)
+                                            <option value="{{ $bank->id }}">{{ $bank->bank_name }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                                 @if ($errors->has('bank_type'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('bank_type') }}</strong>

@@ -85,6 +85,21 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/setting/superannuations/update/{id}', 'SuperannuationController@update')->name('superannuations.update');
 	Route::post('/setting/superannuations/destroy/{id}', 'SuperannuationController@destroy')->name('superannuations.destroy');	
 	
+	// Period Definition Rates
+	Route::get('/setting/period_defination_rates', 'PeriodDefinationRateController@index')->name('period_defination_rates.index');
+	Route::get('/setting/period_defination_rates/create', 'PeriodDefinationRateController@create')->name('period_defination_rates.create');
+	Route::post('/setting/period_defination_rates/store', 'PeriodDefinationRateController@store')->name('period_defination_rates.store');
+	Route::get('/setting/period_defination_rates/edit/{id}', 'PeriodDefinationRateController@edit')->name('period_defination_rates.edit');
+	Route::post('/setting/period_defination_rates/update/{id}', 'PeriodDefinationRateController@update')->name('period_defination_rates.update');
+	Route::post('/setting/period_defination_rates/destroy/{id}', 'PeriodDefinationRateController@destroy')->name('period_defination_rates.destroy');
+
+	// GL Interface Control Files
+	Route::get('/setting/gl_interface_control_files', 'GlInterfaceControlFileController@index')->name('gl_interface_control_files.index');
+	Route::get('/setting/gl_interface_control_files/create', 'GlInterfaceControlFileController@create')->name('gl_interface_control_files.create');
+	Route::post('/setting/gl_interface_control_files/store', 'GlInterfaceControlFileController@store')->name('gl_interface_control_files.store');
+	Route::get('/setting/gl_interface_control_files/edit/{id}', 'GlInterfaceControlFileController@edit')->name('gl_interface_control_files.edit');
+	Route::post('/setting/gl_interface_control_files/update/{id}', 'GlInterfaceControlFileController@update')->name('gl_interface_control_files.update');
+	Route::post('/setting/gl_interface_control_files/destroy/{id}', 'GlInterfaceControlFileController@destroy')->name('gl_interface_control_files.destroy');
 
 	//Currency
 

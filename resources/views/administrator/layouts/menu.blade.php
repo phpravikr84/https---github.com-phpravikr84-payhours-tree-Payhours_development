@@ -36,7 +36,7 @@
                     <ul class="treeview-menu">
                         <li><a href="{{ url('/setting/departments') }}"><i class="fa fa-circle-o"></i>{{ __('System Control File') }}</a></li>
                         <li><a href="{{ url('/setting/bank_lists') }}"><i class="fa fa-circle-o"></i>{{ __('Bank Listing') }}</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('GL Interface Control File') }}</a></li>
+                        <li><a href="{{ route('gl_interface_control_files.index') }}"><i class="fa fa-circle-o"></i>{{ __('GL Interface Control File') }}</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('BSP Bank Transfer Setup') }}</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('ANZ Bank Transfer Setup') }}</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('WPAC Bank Transfer Setup') }}</a></li>
@@ -59,9 +59,9 @@
                         <li><a href="{{ url('/setting/pay_accumulators') }}"><i class="fa fa-circle-o"></i>{{ __('Pay Accumulators') }}</a></li>
                         <li><a href="{{ url('/setting/superannuations') }}"><i class="fa fa-circle-o"></i>{{ __('Superannuation') }}</a></li>
                         <li><a href="{{ route('setting.bank_details.index') }}"><i class="fa fa-circle-o"></i>{{ __('Bank Details') }}</a></li>
-                        <li><a href="{{ url('/setting/departments') }}"><i class="fa fa-circle-o"></i>{{ __('Period Definition') }}</a></li>
+                        <li><a href="{{ route('period_defination_rates.index') }}"><i class="fa fa-circle-o"></i>{{ __('Period Definition') }}</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Pay Items') }}</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Currency') }}</a></li>
+                        <li><a href="{{ route('period_defination_rates.index') }}"><i class="fa fa-circle-o"></i>{{ __('Currency') }}</a></li>
                     </ul>
                 </li>
             </ul>
