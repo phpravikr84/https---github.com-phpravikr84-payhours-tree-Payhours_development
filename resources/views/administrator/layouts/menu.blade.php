@@ -37,8 +37,8 @@
                         <li><a href="{{ url('/setting/departments') }}"><i class="fa fa-circle-o"></i>{{ __('System Control File') }}</a></li>
                         <li><a href="{{ url('/setting/bank_lists') }}"><i class="fa fa-circle-o"></i>{{ __('Bank Listing') }}</a></li>
                         <li><a href="{{ route('gl_interface_control_files.index') }}"><i class="fa fa-circle-o"></i>{{ __('GL Interface Control File') }}</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('BSP Bank Transfer Setup') }}</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('ANZ Bank Transfer Setup') }}</a></li>
+                        <li><a href="{{ route('bsp_bank_transfer_setups.index') }}"><i class="fa fa-circle-o"></i>{{ __('BSP Bank Transfer Setup') }}</a></li>
+                        <li><a href="{{ route('anz_bank_transfer_setups.index') }}"><i class="fa fa-circle-o"></i>{{ __('ANZ Bank Transfer Setup') }}</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('WPAC Bank Transfer Setup') }}</a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('KINA Bank Transfer Setup') }}</a></li>
                     </ul>

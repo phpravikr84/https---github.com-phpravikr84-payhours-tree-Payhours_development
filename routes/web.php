@@ -101,6 +101,25 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/setting/gl_interface_control_files/update/{id}', 'GlInterfaceControlFileController@update')->name('gl_interface_control_files.update');
 	Route::post('/setting/gl_interface_control_files/destroy/{id}', 'GlInterfaceControlFileController@destroy')->name('gl_interface_control_files.destroy');
 
+	// BSP Bank Transfer Setup
+	Route::get('/setting/bsp_bank_transfer_setups', 'BspBankTransferSetupController@index')->name('bsp_bank_transfer_setups.index');
+	Route::post('/setting/bsp_bank_transfer_setups/store_setting', 'BspBankTransferSetupController@store')->name('bsp_bank_transfer_setups_store');
+	Route::get('/setting/get-bank-transfer-setup', 'BspBankTransferSetupController@getBankTransferSetup')->name('get_bsp_bank_transfer_setup');
+	Route::post('/setting/check-bank-exists', 'BspBankTransferSetupController@checkBankExists');
+	Route::post('/setting/bsp_bank_transfer_setups/store_bank', 'BspBankTransferSetupController@storeBank')->name('store_bsp_bank_transfer_setup');
+	Route::post('/setting/bsp_bank_transfer_setups/remove', 'BspBankTransferSetupController@removeBank');
+	Route::post('/setting/bsp_bank_transfer_setups/update', 'BspBankTransferSetupController@updateBank');
+
+	//ANZ Bank Transfer Setup
+	Route::get('/setting/anz_bank_transfer_setups', 'AnzBankTransferSetupController@index')->name('anz_bank_transfer_setups.index');
+	Route::post('/setting/anz_bank_transfer_setups/store_setting', 'AnzBankTransferSetupController@store')->name('anz_bank_transfer_setups_store');
+	Route::get('/setting/get-anz-bank-transfer-setup', 'AnzBankTransferSetupController@getBankTransferSetup')->name('get_anz_bank_transfer_setup');
+	Route::post('/setting/check-anz-bank-exists', 'AnzBankTransferSetupController@checkBankExists');
+	Route::post('/setting/anz_bank_transfer_setups/store_bank', 'AnzBankTransferSetupController@storeBank')->name('store_anz_bank_transfer_setup');
+	Route::post('/setting/anz_bank_transfer_setups/remove', 'AnzBankTransferSetupController@removeBank');
+	Route::post('/setting/anz_bank_transfer_setups/update', 'AnzBankTransferSetupController@updateBank');
+
+
 	//Currency
 
 	// Leave Category Section //

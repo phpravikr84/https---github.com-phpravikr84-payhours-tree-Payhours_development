@@ -38,8 +38,8 @@
                         <li><a href="<?php echo url('/setting/departments'); ?>"><i class="fa fa-circle-o"></i><?php echo __('System Control File'); ?></a></li>
                         <li><a href="<?php echo url('/setting/bank_lists'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Bank Listing'); ?></a></li>
                         <li><a href="<?php echo route('gl_interface_control_files.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('GL Interface Control File'); ?></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('BSP Bank Transfer Setup'); ?></a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('ANZ Bank Transfer Setup'); ?></a></li>
+                        <li><a href="<?php echo route('bsp_bank_transfer_setups.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('BSP Bank Transfer Setup'); ?></a></li>
+                        <li><a href="<?php echo route('anz_bank_transfer_setups.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('ANZ Bank Transfer Setup'); ?></a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('WPAC Bank Transfer Setup'); ?></a></li>
                         <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('KINA Bank Transfer Setup'); ?></a></li>
                     </ul>

@@ -34,12 +34,14 @@
 <!-- For Editor -->
 
 <!-- Common JS for New Features JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Include jQuery and jQuery UI -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 @include('administrator.variables')
 <script src="{{ asset('public/backend/common.js') }}"></script>
+<script src="{{ asset('public/backend/banksetup.js') }}"></script>
 <!-- Common JS End -->
 
 <script>
