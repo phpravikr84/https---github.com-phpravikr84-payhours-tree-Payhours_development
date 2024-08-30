@@ -1,0 +1,110 @@
+/* Customizing the primary and secondary colors */
+:root {
+    --bs-primary: #0078d4; /* Windows 11 blue */
+    --bs-secondary: #2b2b2b; /* Dark grey/black */
+    --bs-success: #16c60c; /* Green */
+    --bs-danger: #e81123; /* Red */
+    --bs-warning: #f9f1a5; /* Yellow */
+    --bs-info: #0178d4; /* Info color similar to primary */
+    --bs-light: #f3f3f3; /* Light grey */
+    --bs-dark: #1f1f1f; /* Very dark grey */
+  }
+  
+  /* Custom background and text colors */
+  body {
+    background-color: var(--bs-light);
+    color: var(--bs-dark);
+  }
+  
+  /* Custom navbar styles */
+  .navbar {
+    background-color: var(--bs-primary);
+    color: #ffffff;
+  }
+  
+  .navbar a {
+    color: #ffffff;
+  }
+  
+  .navbar a:hover {
+    color: var(--bs-light);
+  }
+  
+  /* Custom button styles */
+  .btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+  }
+  
+  .btn-primary:hover {
+    background-color: #005a9e;
+    border-color: #005a9e;
+  }
+  
+  .btn-secondary {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+  }
+  
+  .btn-secondary:hover {
+    background-color: #1b1b1b;
+    border-color: #1b1b1b;
+  }
+  
+  /* Custom card styles */
+  .card {
+    background-color: var(--bs-light);
+    border-color: var(--bs-dark);
+  }
+  
+  .card-header {
+    background-color: var(--bs-secondary);
+    color: #ffffff;
+  }
+  
+  /* Custom table styles */
+  .table {
+    color: var(--bs-dark);
+  }
+  
+  .table thead {
+    background-color: var(--bs-secondary);
+    color: #ffffff;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: var(--bs-light);
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  /* Custom form styles */
+  .form-control {
+    background-color: #ffffff;
+    color: var(--bs-dark);
+    border: 1px solid var(--bs-dark);
+  }
+  
+  .form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: none;
+  }
+  
+  /* Custom scrollbar for Windows look */
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--bs-secondary);
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+  }
+  
+  

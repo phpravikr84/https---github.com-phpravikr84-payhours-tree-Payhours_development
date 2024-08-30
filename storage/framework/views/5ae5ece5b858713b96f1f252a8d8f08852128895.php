@@ -1,57 +1,57 @@
-<?php $__env->startSection('title', __('ANZ Bank Transfer Setup')); ?>
+<?php $__env->startSection('title', __('BSP Bank Transfer Setup')); ?>
 
 <?php $__env->startSection('main_content'); ?>
 <div class="content-wrapper">
     <section class="content-header">
-        <h1><?php echo __('ANZ Bank Transfer Setup'); ?></h1>
+        <h1><?php echo __('BSP Bank Transfer Setup'); ?></h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo url('/dashboard'); ?>"><i class="fa fa-dashboard"></i> <?php echo __('Dashboard'); ?></a></li>
             <li><a><?php echo __('Bank Management'); ?></a></li>
-            <li class="active"><?php echo __('ANZ Bank Transfer Setup'); ?></li>
+            <li class="active"><?php echo __('BSP Bank Transfer Setup'); ?></li>
         </ol>
     </section>
 
     <section class="content">
         <div class="box box-default">
             <div class="box-header with-border">
-                <h3 class="box-title"><?php echo __('ANZ Bank Transfer Setup'); ?></h3>
+                <h3 class="box-title"><?php echo __('BSP Bank Transfer Setup'); ?></h3>
             </div>
             <div class="box-body">
                 <?php if($message = Session::get('success')): ?>
                     <div class="alert alert-success"><?php echo $message; ?></div>
                 <?php endif; ?>
                 <div class="row">
-                    <!-- ANZ Bank Transfer Setup Form -->
+                    <!-- BSP Bank Transfer Setup Form -->
                     <div class="col-md-6 px-4">
-                        <h5><?php echo __('ANZ Bank Transfer Settings'); ?></h5>
-                        <form action="<?php echo route('anz_bank_transfer_setups_store'); ?>" method="POST">
+                        <h5><?php echo __('BSP Bank Transfer Settings'); ?></h5>
+                        <form action="<?php echo route('banks.store'); ?>" method="POST">
                             <?php echo csrf_field(); ?>
 
                             <div class="box-tools pull-right">
-                                <button type="button" id="anz_modify_setting" class="btn btn-primary"><?php echo __('Modify Setting'); ?></button>
-                                <button type="button" id="anz_save_setting" class="btn btn-success"><?php echo __('Save'); ?></button>
-                                <button type="button" id="anz_cancel_setting" class="btn btn-cancel"><?php echo __('Cancel'); ?></button>
-                                <input type="hidden" id="anz_id" name="id" />
+                                <button type="button" id="modify_setting" class="btn btn-primary"><?php echo __('Modify Setting'); ?></button>
+                                <button type="submit" id="save_setting" class="btn btn-success"><?php echo __('Save'); ?></button>
+                                <button type="button" id="cancel_setting" class="btn btn-cancel"><?php echo __('Cancel'); ?></button>
+                                <input type="hidden" id="id" name="id" />
                             </div>
                             <div class="box-body pt-4">
                                 <div class="form-group">
-                                    <label for="anz_customer_reference"><?php echo __('ANZ Customer Reference'); ?></label>
-                                    <input type="text" name="anz_customer_reference" id="anz_customer_reference" class="form-control" required>
+                                    <label for="bsp_customer_reference"><?php echo __('BSP Customer Reference'); ?></label>
+                                    <input type="text" name="bsp_customer_reference" id="bsp_customer_reference" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="anz_folder_directory"><?php echo __('Folder Directory'); ?></label>
-                                    <input type="text" name="anz_folder_directory" id="anz_folder_directory" class="form-control" required>
+                                    <label for="bsp_folder_directory"><?php echo __('Folder Directory'); ?></label>
+                                    <input type="text" name="bsp_folder_directory" id="bsp_folder_directory" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="gl_code_id"><?php echo __('GL Account Code'); ?></label>
-                                    <select name="gl_code_id" id="gl_code_id" class="form-control">
+                                    <label for="gl_account_code"><?php echo __('GL Account Code'); ?></label>
+                                       <select name="gl_account_code" id="gl_account_code" class="form-control">
                                         <?php if($glCodes): ?>
                                             <?php $__currentLoopData = $glCodes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $glCode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option value="<?php echo $glCode->id; ?>"><?php echo $glCode->gl_name; ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         <?php endif; ?>
-                                    </select>
+                                        </select>
                                 </div>
                             </div>
                         </form>
@@ -92,7 +92,7 @@
                                                         <td><?php echo $bank->bank_code; ?></td>
                                                         <td><?php echo $bank->bank_name; ?></td>
                                                         <td>
-                                                            <button class="btn btn-success anzSelectedBank" 
+                                                            <button class="btn btn-success selectedBank" 
                                                                     data-bank-id="<?php echo $bank->id; ?>" 
                                                                     data-bank-code="<?php echo $bank->bank_code; ?>" 
                                                                     data-bank-name="<?php echo $bank->bank_name; ?>">
@@ -100,7 +100,6 @@
 
                                                             </button>
                                                         </td>
-                                                    </tr>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </tbody>
                                         </table>
@@ -125,15 +124,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php if($anzSettingBanks && $anzSettingBanks->count()): ?>
-                                        <?php $__currentLoopData = $anzSettingBanks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $anzSettingBank): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <tr data-bank-id="<?php echo $anzSettingBank->bank_id; ?>">
-                                                <td><?php echo $anzSettingBank->bank_id; ?></td>
-                                                <td><?php echo $anzSettingBank->bank_name; ?></td>
-                                                <td><?php echo $anzSettingBank->transaction_fee ? $anzSettingBank->transaction_fee : 0; ?></td>
+                                    <?php if($bspSettingBanks && $bspSettingBanks->count()): ?>
+                                        <?php $__currentLoopData = $bspSettingBanks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bspSettingBank): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <tr data-bank-id="<?php echo $bspSettingBank->bank_id; ?>">
+                                                <td><?php echo $bspSettingBank->bank_id; ?></td>
+                                                <td><?php echo $bspSettingBank->bank_name; ?></td>
+                                                <td><?php echo $bspSettingBank->transaction_fee ? $bspSettingBank->transaction_fee : 0; ?></td>
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-primary pull-right anz-edit-btn">Edit</a>
-                                                    <a href="#" class="btn btn-sm btn-danger pull-right anz-remove-btn">Remove</a>
+                                                    <a href="#" class="btn btn-sm btn-primary pull-right edit-btn">Edit</a>
+                                                    <a href="#" class="btn btn-sm btn-danger pull-right remove-btn">Remove</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -153,5 +152,4 @@
     </section>
 </div>
 <?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('administrator.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

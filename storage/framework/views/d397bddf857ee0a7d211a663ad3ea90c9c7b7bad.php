@@ -10,11 +10,31 @@
             BspBankTransferSetupStore: '<?php echo route("store_bsp_bank_transfer_setup"); ?>',
             BspBankTransferSetupRemove: "<?php echo url('/setting/bsp_bank_transfer_setups/remove'); ?>",
             BspBankTransferSetupUpdate: "<?php echo url('/setting/bsp_bank_transfer_setups/update'); ?>",
-            BspBankSettingStore: '<?php echo route("bsp_bank_transfer_setups_store"); ?>',
-            AnzBankTransferSetupStore: '<?php echo route("store_anz_bank_transfer_setup"); ?>',
+            BspBankSettingStore: '<?php echo route("store_bsp_bank_transfer_setup"); ?>',
+            
+            GetAnzBankTransferSetup: '<?php echo route("get_anz_bank_transfer_setup"); ?>',
+            CheckAnzBankExists: '<?php echo url("/setting/check-anz-bank-exists"); ?>',
+            AnzBankTransferSetupStore: '<?php echo route("anz_bank_transfer_setups_store"); ?>',
             AnzBankTransferSetupRemove: "<?php echo url('/setting/anz_bank_transfer_setups/remove'); ?>",
             AnzBankTransferSetupUpdate: "<?php echo url('/setting/anz_bank_transfer_setups/update'); ?>",
-            AnzBankSettingStore: '<?php echo route("anz_bank_transfer_setups_store"); ?>'
+            AnzBankSettingStore: '<?php echo route("store_anz_bank_transfer_setup"); ?>',
+
+             // WPAC Bank Transfer Setup
+            GetWpacBankTransferSetup: '<?php echo route("get_wpac_bank_transfer_setup"); ?>',
+            CheckWpacBankExists: '<?php echo url("/setting/check-wpac-bank-exists"); ?>',
+            WpacBankTransferSetupStore: '<?php echo route("wpac_bank_transfer_setups_store"); ?>',
+            WpacBankTransferSetupRemove: "<?php echo url('/setting/wpac_bank_transfer_setups/remove'); ?>",
+            WpacBankTransferSetupUpdate: "<?php echo url('/setting/wpac_bank_transfer_setups/update'); ?>",
+            WpacBankSettingStore: '<?php echo route("store_wpac_bank_transfer_setup"); ?>',
+
+            // Kina Bank Transfer Setup
+            GetKinaBankTransferSetup: '<?php echo route("get_kina_bank_transfer_setup"); ?>',
+            CheckKinaBankExists: '<?php echo url("/setting/check-kina-bank-exists"); ?>',
+            KinaBankTransferSetupStore: '<?php echo route("kina_bank_transfer_setups_store"); ?>',
+            KinaBankTransferSetupRemove: "<?php echo url('/setting/kina_bank_transfer_setups/remove'); ?>",
+            KinaBankTransferSetupUpdate: "<?php echo url('/setting/kina_bank_transfer_setups/update'); ?>",
+            KinaBankSettingStore: '<?php echo route("store_kina_bank_transfer_setup"); ?>',
+            
         }
     };
 </script>

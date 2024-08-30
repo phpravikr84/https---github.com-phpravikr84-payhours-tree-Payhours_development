@@ -40,6 +40,7 @@
     
      <!-- My Stylesheet -->
     <link rel="stylesheet" href="<?php echo asset('public/backend/mystyle.css'); ?>">
+    <link rel="stylesheet" href="<?php echo asset('public/backend/layout.css'); ?>">
     <!-- /My Stylesheet -->
 
 <script src="<?php echo asset('public/backend/bower_components/jquery/dist/jquery.min.js'); ?>"></script>

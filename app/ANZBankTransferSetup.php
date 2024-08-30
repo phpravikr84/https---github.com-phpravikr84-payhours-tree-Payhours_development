@@ -9,6 +9,6 @@ class AnzBankTransferSetup extends Model
     protected $fillable = [
         'anz_customer_reference',
         'anz_folder_directory',
-        'gl_account_code',
+        'gl_code_id',
     ];
 }

@@ -36,7 +36,7 @@
                         @foreach ($controlFiles as $controlFile)
                             <tr>
                                 <td>{{ $controlFile->control_setup_name }}</td>
-                                <td>{{ $controlFile->gl_code_account_name }}</td>
+                                <td>{{ $controlFile->gl_name }}</td>
                                 <td>
                                     <a href="{{ route('gl_interface_control_files.edit', $controlFile->id) }}" class="btn btn-sm btn-info">{{ __('Edit') }}</a>
                                     <form action="{{ route('gl_interface_control_files.destroy', $controlFile->id) }}" method="POST" style="display:inline;">

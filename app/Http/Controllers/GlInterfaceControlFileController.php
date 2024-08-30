@@ -3,19 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\GlInterfaceControlFile;
+use App\GlCode;
 use Illuminate\Http\Request;
 
 class GlInterfaceControlFileController extends Controller
 {
     public function index()
     {
-        $controlFiles = GlInterfaceControlFile::all();
-        return view('administrator.setting.gl_interface_control_files.index', compact('controlFiles'));
+        $controlFiles = GlInterfaceControlFile::join('gl_codes', 'gl_codes.id', '=', 'gl_interface_control_files.gl_code_account_name')
+        ->select('gl_interface_control_files.*', 'gl_codes.gl_name') // Select all columns from both tables, adjust as needed
+        ->get();
+        $glCodes = GLCode::all();
+        return view('administrator.setting.gl_interface_control_files.index', compact('controlFiles', 'glCodes'));
     }
 
     public function create()
     {
-        return view('administrator.setting.gl_interface_control_files.create');
+        $glCodes = GLCode::all();
+        return view('administrator.setting.gl_interface_control_files.create', compact('glCodes'));
     }
 
     public function store(Request $request)
@@ -33,7 +38,8 @@ class GlInterfaceControlFileController extends Controller
     public function edit($id)
     {
         $controlFile = GlInterfaceControlFile::findOrFail($id);
-        return view('administrator.setting.gl_interface_control_files.edit', compact('controlFile'));
+        $glCodes = GLCode::all();
+        return view('administrator.setting.gl_interface_control_files.edit', compact('controlFile', 'glCodes'));
     }
 
     public function update(Request $request, $id)

@@ -26,7 +26,13 @@
                     </div>
                     <div class="form-group">
                         <label for="gl_code_account_name">{{ __('GL Code Account Name') }}</label>
-                        <input type="text" name="gl_code_account_name" class="form-control" value="{{ old('gl_code_account_name', $controlFile->gl_code_account_name) }}">
+                        <select name="gl_code_account_name" id="gl_code_account_name" class="form-control">
+                            @if($glCodes)
+                                @foreach($glCodes as $glCode)
+                                    <option value="{{ $glCode->id }}" {{ $controlFile->gl_code_account_name==$glCode->id ? 'selected' :  ''}}>{{ $glCode->gl_name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
                 </form>

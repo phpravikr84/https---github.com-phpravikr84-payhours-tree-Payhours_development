@@ -119,6 +119,33 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/setting/anz_bank_transfer_setups/remove', 'AnzBankTransferSetupController@removeBank');
 	Route::post('/setting/anz_bank_transfer_setups/update', 'AnzBankTransferSetupController@updateBank');
 
+	// Wpac Bank Transfer Setup
+	Route::get('/setting/wpac_bank_transfer_setups', 'WpacBankTransferSetupController@index')->name('wpac_bank_transfer_setups.index');
+	Route::post('/setting/wpac_bank_transfer_setups/store_setting', 'WpacBankTransferSetupController@store')->name('wpac_bank_transfer_setups_store');
+	Route::get('/setting/get-wpac-bank-transfer-setup', 'WpacBankTransferSetupController@getBankTransferSetup')->name('get_wpac_bank_transfer_setup');
+	Route::post('/setting/check-wpac-bank-exists', 'WpacBankTransferSetupController@checkBankExists');
+	Route::post('/setting/wpac_bank_transfer_setups/store_bank', 'WpacBankTransferSetupController@storeBank')->name('store_wpac_bank_transfer_setup');
+	Route::post('/setting/wpac_bank_transfer_setups/remove', 'WpacBankTransferSetupController@removeBank');
+	Route::post('/setting/wpac_bank_transfer_setups/update', 'WpacBankTransferSetupController@updateBank');
+
+		// Kina Bank Transfer Setup
+	Route::get('/setting/kina_bank_transfer_setups', 'KinaBankTransferSetupController@index')->name('kina_bank_transfer_setups.index');
+	Route::post('/setting/kina_bank_transfer_setups/store_setting', 'KinaBankTransferSetupController@store')->name('kina_bank_transfer_setups_store');
+	Route::get('/setting/get-kina-bank-transfer-setup', 'KinaBankTransferSetupController@getBankTransferSetup')->name('get_kina_bank_transfer_setup');
+	Route::post('/setting/check-kina-bank-exists', 'KinaBankTransferSetupController@checkBankExists');
+	Route::post('/setting/kina_bank_transfer_setups/store_bank', 'KinaBankTransferSetupController@storeBank')->name('store_kina_bank_transfer_setup');
+	Route::post('/setting/kina_bank_transfer_setups/remove', 'KinaBankTransferSetupController@removeBank');
+	Route::post('/setting/kina_bank_transfer_setups/update', 'KinaBankTransferSetupController@updateBank');
+
+	//PayItems
+	Route::get('/setting/pay_items', 'PayItemController@index')->name('pay_items.index');
+	Route::get('/setting/pay_items/create', 'PayItemController@create')->name('pay_items.create');
+	Route::post('/setting/pay_items/store', 'PayItemController@store')->name('pay_items.store');
+	Route::get('/setting/pay_items/edit/{id}', 'PayItemController@edit')->name('pay_items.edit');
+	Route::post('/setting/pay_items/update/{id}', 'PayItemController@update')->name('pay_items.update');
+	Route::post('/setting/pay_items/destroy/{id}', 'PayItemController@destroy')->name('pay_items.destroy');
+
+
 
 	//Currency
 

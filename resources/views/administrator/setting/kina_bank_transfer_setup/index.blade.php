@@ -1,46 +1,46 @@
 @extends('administrator.master')
-@section('title', __('ANZ Bank Transfer Setup'))
+@section('title', __('Kina Bank Transfer Setup'))
 
 @section('main_content')
 <div class="content-wrapper">
     <section class="content-header">
-        <h1>{{ __('ANZ Bank Transfer Setup') }}</h1>
+        <h1>{{ __('Kina Bank Transfer Setup') }}</h1>
         <ol class="breadcrumb">
             <li><a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }}</a></li>
             <li><a>{{ __('Bank Management') }}</a></li>
-            <li class="active">{{ __('ANZ Bank Transfer Setup') }}</li>
+            <li class="active">{{ __('Kina Bank Transfer Setup') }}</li>
         </ol>
     </section>
 
     <section class="content">
         <div class="box box-default">
             <div class="box-header with-border">
-                <h3 class="box-title">{{ __('ANZ Bank Transfer Setup') }}</h3>
+                <h3 class="box-title">{{ __('Kina Bank Transfer Setup') }}</h3>
             </div>
             <div class="box-body">
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success">{{ $message }}</div>
                 @endif
                 <div class="row">
-                    <!-- ANZ Bank Transfer Setup Form -->
+                    <!-- Kina Bank Transfer Setup Form -->
                     <div class="col-md-6 px-4">
-                        <h5>{{ __('ANZ Bank Transfer Settings') }}</h5>
-                        <form action="{{ route('anz_bank_transfer_setups_store') }}" method="POST">
+                        <h5>{{ __('Kina Bank Transfer Settings') }}</h5>
+                        <form action="{{ route('kina_bank_transfer_setups_store') }}" method="POST">
                             {{ csrf_field() }}
                             <div class="box-tools pull-right">
-                                <button type="button" id="anz_modify_setting" class="btn btn-primary">{{ __('Modify Setting') }}</button>
-                                <button type="button" id="anz_save_setting" class="btn btn-success">{{ __('Save') }}</button>
-                                <button type="button" id="anz_cancel_setting" class="btn btn-cancel">{{ __('Cancel') }}</button>
-                                <input type="hidden" id="anz_id" name="id" />
+                                <button type="button" id="kina_modify_setting" class="btn btn-primary">{{ __('Modify Setting') }}</button>
+                                <button type="button" id="kina_save_setting" class="btn btn-success">{{ __('Save') }}</button>
+                                <button type="button" id="kina_cancel_setting" class="btn btn-cancel">{{ __('Cancel') }}</button>
+                                <input type="hidden" id="kina_id" name="id" />
                             </div>
                             <div class="box-body pt-4">
                                 <div class="form-group">
-                                    <label for="anz_customer_reference">{{ __('ANZ Customer Reference') }}</label>
-                                    <input type="text" name="anz_customer_reference" id="anz_customer_reference" class="form-control" required>
+                                    <label for="kina_customer_reference">{{ __('Kina Customer Reference') }}</label>
+                                    <input type="text" name="kina_customer_reference" id="kina_customer_reference" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="anz_folder_directory">{{ __('Folder Directory') }}</label>
-                                    <input type="text" name="anz_folder_directory" id="anz_folder_directory" class="form-control" required>
+                                    <label for="kina_folder_directory">{{ __('Folder Directory') }}</label>
+                                    <input type="text" name="kina_folder_directory" id="kina_folder_directory" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
@@ -92,7 +92,7 @@
                                                         <td>{{ $bank->bank_code }}</td>
                                                         <td>{{ $bank->bank_name }}</td>
                                                         <td>
-                                                            <button class="btn btn-success anzSelectedBank" 
+                                                            <button class="btn btn-success kinaSelectedBank" 
                                                                     data-bank-id="{{ $bank->id }}" 
                                                                     data-bank-code="{{ $bank->bank_code }}" 
                                                                     data-bank-name="{{ $bank->bank_name }}">
@@ -111,7 +111,7 @@
                             </div>
                         </div>
                         <!-- Selected Banks -->
-                        <div id="selectedBanks">
+                        <div id="selectedKinaBanks">
                             <h4>{{ __('Selected Banks') }}</h4>
                             <table class="table table-bordered dataTable" id="dt-ref" width="100%" cellspacing="0">
                                 <!-- Dynamically added selected banks will appear here -->
@@ -124,15 +124,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if($anzSettingBanks && $anzSettingBanks->count())
-                                        @foreach($anzSettingBanks as $anzSettingBank)
-                                            <tr data-bank-id="{{ $anzSettingBank->bank_id }}">
-                                                <td>{{ $anzSettingBank->bank_id }}</td>
-                                                <td>{{ $anzSettingBank->bank_name }}</td>
-                                                <td>{{ $anzSettingBank->transaction_fee ? $anzSettingBank->transaction_fee : 0 }}</td>
+                                    @if($kinaSettingBanks && $kinaSettingBanks->count())
+                                        @foreach($kinaSettingBanks as $kinaSettingBank)
+                                            <tr data-bank-id="{{ $kinaSettingBank->bank_id }}">
+                                                <td>{{ $kinaSettingBank->bank_id }}</td>
+                                                <td>{{ $kinaSettingBank->bank_name }}</td>
+                                                <td>{{ $kinaSettingBank->transaction_fee ? $kinaSettingBank->transaction_fee : 0 }}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-primary pull-right anz-edit-btn">Edit</a>
-                                                    <a href="#" class="btn btn-sm btn-danger pull-right anz-remove-btn">Remove</a>
+                                                    <a href="#" class="btn btn-sm btn-primary pull-right kina-edit-btn">Edit</a>
+                                                    <a href="#" class="btn btn-sm btn-danger pull-right kina-remove-btn">Remove</a>
                                                 </td>
                                             </tr>
                                         @endforeach

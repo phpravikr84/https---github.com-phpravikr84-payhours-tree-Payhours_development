@@ -266,3 +266,93 @@ $(function() {
     });
 });
 
+
+$(document).ready(function() {
+    $('#addPayItem').on('click', function() {
+        var form = $('#addPayItemForm');
+        $.ajax({
+            url: form.attr('action'),
+            method: form.attr('method'),
+            data: form.serialize(),
+            success: function(response) {
+                if (response.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: response.success,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    // Close the modal
+                    $('#addPayItemModal').modal('hide');
+                    // Optionally, refresh the page or update the table/list dynamically
+                }
+            },
+            error: function(xhr) {
+                var errors = xhr.responseJSON.errors;
+                var errorMessage = '';
+                $.each(errors, function(key, value) {
+                    errorMessage += value + '<br>';
+                });
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    html: errorMessage
+                });
+            }
+        });
+    });
+});
+
+
+
+$(document).ready(function() {
+    // Handle Edit Modal data population
+    $('#editPayItemModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var id = button.data('id');
+        var name = button.data('name');
+        var gl_account_id = button.data('glaccount');
+        var accumulator_id = button.data('accumulator');
+    
+        var modal = $(this);
+        modal.find('#edit_id').val(id);
+        modal.find('#edit_name').val(name);
+        modal.find('#edit_gl_account_id').val(gl_account_id);
+        modal.find('#edit_accumulator_id').val(accumulator_id);
+    
+        var actionUrl = "{{ url('settings/pay-items') }}/" + id;
+        $('#editPayItemForm').attr('action', actionUrl);
+    });
+    
+
+    // Handle Delete action
+    $('.btn-delete').click(function() {
+        var id = $(this).data('id');
+        Swal.fire({
+            title: '{{ __("Are you sure?") }}',
+            text: "{{ __('You won\'t be able to revert this!') }}",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: '{{ __("Yes, delete it!") }}'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "{{ url('settings/pay_items/destroy') }}/" + id,
+                    type: 'POST',
+                    data: {
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(response) {
+                        Swal.fire('{{ __("Deleted!") }}', response.message, 'success').then(() => {
+                            location.reload();
+                        });
+                    },
+                    error: function(response) {
+                        Swal.fire('{{ __("Error") }}', '{{ __("Something went wrong") }}', 'error');
+                    }
+                });
+            }
+        });
+    });
+});
