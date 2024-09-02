@@ -41,6 +41,9 @@
                         <li><a href="{{ route('anz_bank_transfer_setups.index') }}"><i class="fa fa-circle-o"></i>{{ __('ANZ Bank Transfer Setup') }}</a></li>
                         <li><a href="{{ route('wpac_bank_transfer_setups.index') }}"><i class="fa fa-circle-o"></i>{{ __('WPAC Bank Transfer Setup') }}</a></li>
                         <li><a href="{{ route('kina_bank_transfer_setups.index') }}"><i class="fa fa-circle-o"></i>{{ __('KINA Bank Transfer Setup') }}</a></li>
+                        <li><a href="{{ url('/setting/holidays') }}"><i class="fa fa-circle-o"></i>{{ __('Holiday List') }} </a></li>
+                        <li><a href="{{ url('/setting/working-days') }}"><i class="fa fa-circle-o"></i> {{ __('Set Working Day') }}</a></li>
+                        <li><a href="{{ url('/setting/personal-events') }}"><i class="fa fa-circle-o"></i>{{ __('Personal Event') }} </a></li>
                     </ul>
                 </li>
 
@@ -61,7 +64,7 @@
                         <li><a href="{{ route('setting.bank_details.index') }}"><i class="fa fa-circle-o"></i>{{ __('Bank Details') }}</a></li>
                         <li><a href="{{ route('period_defination_rates.index') }}"><i class="fa fa-circle-o"></i>{{ __('Period Definition') }}</a></li>
                         <li><a href="{{ route('pay_items.index') }}"><i class="fa fa-circle-o"></i>{{ __('Pay Items') }}</a></li>
-                        <li><a href="{{ route('period_defination_rates.index') }}"><i class="fa fa-circle-o"></i>{{ __('Currency') }}</a></li>
+                        <li><a href="{{ route('currencies.index') }}"><i class="fa fa-circle-o"></i>{{ __('Currency') }}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -76,10 +79,11 @@
                 </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Employee File Maintenance') }}</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Approve Employee Changes') }}</a></li>
+                <li><a href="{{ url('/people/employees/create') }}"><i class="fa fa-circle-o"></i>{{ __('Employee File Maintenance') }}</a></li>
+                <li><a href="{{ url('/people/employees') }}"><i class="fa fa-circle-o"></i>{{ __('Approve Employee Changes') }}</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Employee Loans') }}</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Leave Request') }}</a></li>
+                <li><a href="{{ url('/hrm/leave') }}"><i class="fa fa-circle-o"></i>{{ __('Leave Request') }}</a></li>
+                
             </ul>
         </li>
 
@@ -93,8 +97,8 @@
             </a>
             <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Pay Reference Status Enquiry') }}</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Create Pay') }}</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Manage Pay') }}</a></li>
+                <li><a href="{{ route('pay_references.create')}}"><i class="fa fa-circle-o"></i>{{ __('Create Pay') }}</a></li>
+                <li><a href="{{ route('pay_references.index')}}"><i class="fa fa-circle-o"></i>{{ __('Manage Pay') }}</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>{{ __('Approve Process Pay') }}</a></li>
             </ul>
         </li>

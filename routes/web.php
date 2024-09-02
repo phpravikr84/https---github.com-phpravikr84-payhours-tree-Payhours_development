@@ -145,6 +145,23 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/setting/pay_items/update/{id}', 'PayItemController@update')->name('pay_items.update');
 	Route::post('/setting/pay_items/destroy/{id}', 'PayItemController@destroy')->name('pay_items.destroy');
 
+	//Currencies
+	Route::get('/setting/currencies', 'CurrencyController@index')->name('currencies.index');
+	Route::get('/setting/currencies/create', 'CurrencyController@create')->name('currencies.create');
+	Route::post('/setting/currencies/store', 'CurrencyController@store')->name('currencies.store');
+	Route::get('/setting/currencies/edit/{id}', 'CurrencyController@edit')->name('currencies.edit');
+	Route::post('/setting/currencies/update/{id}', 'CurrencyController@update')->name('currencies.update');
+	Route::post('/setting/currencies/destroy/{id}', 'CurrencyController@destroy')->name('currencies.destroy');
+
+	//
+	Route::get('/process_pay/pay_references', 'PayReferenceController@index')->name('pay_references.index');
+	Route::get('/process_pay/pay_references/create', 'PayReferenceController@create')->name('pay_references.create');
+	Route::post('/process_pay/pay_references/store', 'PayReferenceController@store')->name('pay_references.store');
+	Route::get('/process_pay/pay_references/edit/{id}', 'PayReferenceController@edit')->name('pay_references.edit');
+	Route::get('/process_pay/pay_references/show/{id}', 'PayReferenceController@show')->name('pay_references.show');
+	Route::post('/process_pay/pay_references/update/{id}', 'PayReferenceController@update')->name('pay_references.update');
+	Route::post('/process_pay/pay_references/destroy/{id}', 'PayReferenceController@destroy')->name('pay_references.destroy');
+
 
 
 	//Currency

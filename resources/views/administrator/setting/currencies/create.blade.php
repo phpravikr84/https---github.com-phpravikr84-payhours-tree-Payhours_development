@@ -18,7 +18,7 @@
                 <h3 class="box-title">{{ __('Add Currency') }}</h3>
             </div>
             <form action="{{ route('currencies.store') }}" method="POST">
-                @csrf
+                {{ csrf_field() }}
                 <div class="box-body">
                     <div class="form-group">
                         <label for="currency_code">{{ __('Currency Code') }}</label>

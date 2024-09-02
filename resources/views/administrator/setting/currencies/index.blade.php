@@ -47,8 +47,7 @@
                             <td>
                                 <a href="{{ route('currencies.edit', $currency->id) }}" class="btn btn-info">{{ __('Edit') }}</a>
                                 <form action="{{ route('currencies.destroy', $currency->id) }}" method="POST" style="display:inline-block;">
-                                    @csrf
-                                    @method('DELETE')
+                                    {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('{{ __('Are you sure?') }}')">{{ __('Delete') }}</button>
                                 </form>
                             </td>

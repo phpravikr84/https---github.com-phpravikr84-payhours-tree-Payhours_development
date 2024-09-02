@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             <li><a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard"></i> {{ __('Dashboard') }}</a></li>
             <li><a>{{ __('Leave') }}</a></li>
-            <li><a href="{{ route('leave.index') }}">{{ __('Show Leave Application Lists') }}</a></li>
+            <li><a href="{{ url('/hrm/leave') }}">{{ __('Show Leave Application Lists') }}</a></li>
             <li class="active">{{ __('Change Leave Status') }}</li>
         </ol>
     </section>

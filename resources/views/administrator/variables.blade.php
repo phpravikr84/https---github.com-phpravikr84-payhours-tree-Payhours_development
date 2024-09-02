@@ -35,6 +35,11 @@
             KinaBankTransferSetupUpdate: "{{ url('/setting/kina_bank_transfer_setups/update') }}",
             KinaBankSettingStore: '{{ route("store_kina_bank_transfer_setup") }}',
             
+            //Pay Item
+            PayItemEdit :'{{ url("/setting/pay_items/edit") }}',
+            PayItemDel :'{{ url("/setting/pay_items/destroy") }}',
+            PayItemUpdate :'{{ url("/setting/pay_items/update") }}',
+            PayItemAdd : '{{ route("pay_items.store") }}',
         }
     };
 </script>

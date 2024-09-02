@@ -42,6 +42,9 @@
                         <li><a href="<?php echo route('anz_bank_transfer_setups.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('ANZ Bank Transfer Setup'); ?></a></li>
                         <li><a href="<?php echo route('wpac_bank_transfer_setups.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('WPAC Bank Transfer Setup'); ?></a></li>
                         <li><a href="<?php echo route('kina_bank_transfer_setups.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('KINA Bank Transfer Setup'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/holidays'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Holiday List'); ?> </a></li>
+                        <li><a href="<?php echo url('/setting/working-days'); ?>"><i class="fa fa-circle-o"></i> <?php echo __('Set Working Day'); ?></a></li>
+                        <li><a href="<?php echo url('/setting/personal-events'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Personal Event'); ?> </a></li>
                     </ul>
                 </li>
 
@@ -63,7 +66,7 @@
                         <li><a href="<?php echo route('setting.bank_details.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Bank Details'); ?></a></li>
                         <li><a href="<?php echo route('period_defination_rates.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Period Definition'); ?></a></li>
                         <li><a href="<?php echo route('pay_items.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Pay Items'); ?></a></li>
-                        <li><a href="<?php echo route('period_defination_rates.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Currency'); ?></a></li>
+                        <li><a href="<?php echo route('currencies.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Currency'); ?></a></li>
                     </ul>
                 </li>
             </ul>
@@ -78,10 +81,11 @@
                 </span>
             </a>
             <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Employee File Maintenance'); ?></a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Approve Employee Changes'); ?></a></li>
+                <li><a href="<?php echo url('/people/employees/create'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Employee File Maintenance'); ?></a></li>
+                <li><a href="<?php echo url('/people/employees'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Approve Employee Changes'); ?></a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Employee Loans'); ?></a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Leave Request'); ?></a></li>
+                <li><a href="<?php echo url('/hrm/leave'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Leave Request'); ?></a></li>
+                
             </ul>
         </li>
 
@@ -95,8 +99,8 @@
             </a>
             <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Pay Reference Status Enquiry'); ?></a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Create Pay'); ?></a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Manage Pay'); ?></a></li>
+                <li><a href="<?php echo route('pay_references.create'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Create Pay'); ?></a></li>
+                <li><a href="<?php echo route('pay_references.index'); ?>"><i class="fa fa-circle-o"></i><?php echo __('Manage Pay'); ?></a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i><?php echo __('Approve Process Pay'); ?></a></li>
             </ul>
         </li>

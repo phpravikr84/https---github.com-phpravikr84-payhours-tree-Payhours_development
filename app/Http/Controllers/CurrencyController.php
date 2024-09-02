@@ -9,12 +9,12 @@ class CurrencyController extends Controller
     public function index()
     {
         $currencies = Currency::all();
-        return view('currencies.index', compact('currencies'));
+        return view('administrator.setting.currencies.index', compact('currencies'));
     }
 
     public function create()
     {
-        return view('currencies.create');
+        return view('administrator.setting.currencies.create');
     }
 
     public function store(Request $request)
@@ -35,7 +35,7 @@ class CurrencyController extends Controller
 
     public function edit(Currency $currency)
     {
-        return view('currencies.edit', compact('currency'));
+        return view('administrator.setting.currencies.edit', compact('currency'));
     }
 
     public function update(Request $request, Currency $currency)

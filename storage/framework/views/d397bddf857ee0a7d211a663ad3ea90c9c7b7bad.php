@@ -35,6 +35,11 @@
             KinaBankTransferSetupUpdate: "<?php echo url('/setting/kina_bank_transfer_setups/update'); ?>",
             KinaBankSettingStore: '<?php echo route("store_kina_bank_transfer_setup"); ?>',
             
+            //Pay Item
+            PayItemEdit :'<?php echo url("/setting/pay_items/edit"); ?>',
+            PayItemDel :'<?php echo url("/setting/pay_items/destroy"); ?>',
+            PayItemUpdate :'<?php echo url("/setting/pay_items/update"); ?>',
+            PayItemAdd : '<?php echo route("pay_items.store"); ?>',
         }
     };
 </script>

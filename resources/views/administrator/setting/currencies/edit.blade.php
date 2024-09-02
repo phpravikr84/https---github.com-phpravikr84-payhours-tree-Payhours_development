@@ -18,8 +18,7 @@
                 <h3 class="box-title">{{ __('Edit Currency') }}</h3>
             </div>
             <form action="{{ route('currencies.update', $currency->id) }}" method="POST">
-                @csrf
-                @method('PUT')
+                {{ csrf_field() }}
                 <div class="box-body">
                     <div class="form-group">
                         <label for="currency_code">{{ __('Currency Code') }}</label>
